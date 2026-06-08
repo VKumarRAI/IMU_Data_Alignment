@@ -1,0 +1,120 @@
+GIT COMMANDS REFERENCE FOR IMU DATA ALIGNMENT PROJECT
+========================================================
+
+QUICK START - COMMIT & PUSH EVERYTHING
+---------------------------------------
+git add .                                   # Stage all changes
+git commit -m "Your message here"           # Commit with message
+git push                                    # Push to remote
+
+OR IN ONE LINE:
+git add . && git commit -m "Your message" && git push
+
+FIRST TIME SETUP ONLY
+----------------------
+git init                                    # Initialize repository (once)
+git remote add origin <url>                 # Add remote repository (once)
+git push -u origin main                     # First push (once)
+
+BASIC WORKFLOW
+--------------
+git status                                  # Check status of files
+git add .                                   # Stage all changes
+git add <file>                              # Stage specific file
+git commit -m "Your commit message"         # Commit staged changes
+git push                                    # Push to remote
+git pull                                    # Pull latest changes from remote
+git log                                     # View commit history
+git log --oneline                           # View condensed commit history
+
+REMOTE REPOSITORY
+-----------------
+git remote add origin <url>                 # Add remote repository
+git remote -v                               # View remote repositories
+git push -u origin main                     # Push to remote (first time)
+git push                                    # Push subsequent commits
+git pull                                    # Pull latest changes from remote
+git clone <url>                             # Clone a repository
+
+BRANCH MANAGEMENT
+-----------------
+git branch                                  # List all branches
+git branch <branch-name>                    # Create new branch
+git checkout <branch-name>                  # Switch to branch
+git checkout -b <branch-name>               # Create and switch to new branch
+git merge <branch-name>                     # Merge branch into current branch
+git branch -d <branch-name>                 # Delete branch (safe)
+git branch -D <branch-name>                 # Force delete branch
+
+VIEWING CHANGES
+---------------
+git diff                                    # Show unstaged changes
+git diff --staged                           # Show staged changes
+git show <commit-hash>                      # Show specific commit
+
+UNDOING CHANGES
+---------------
+git restore <file>                          # Discard changes in working directory
+git restore --staged <file>                 # Unstage file
+git reset HEAD~1                            # Undo last commit (keep changes)
+git reset --hard HEAD~1                     # Undo last commit (discard changes)
+git revert <commit-hash>                    # Create new commit that undoes changes
+
+WORKING WITH .gitignore
+-----------------------
+git rm --cached <file>                      # Remove file from tracking (keep local)
+git rm -r --cached .                        # Remove all cached files
+git add .                                   # Re-add files respecting .gitignore
+git commit -m "Update .gitignore"           # Commit the changes
+
+STASHING CHANGES
+----------------
+git stash                                   # Save changes temporarily
+git stash list                              # List all stashes
+git stash pop                               # Apply and remove latest stash
+git stash apply                             # Apply latest stash (keep in list)
+git stash drop                              # Delete latest stash
+
+TAGS
+----
+git tag                                     # List tags
+git tag v1.0.0                              # Create lightweight tag
+git tag -a v1.0.0 -m "Version 1.0.0"        # Create annotated tag
+git push origin v1.0.0                      # Push specific tag
+git push --tags                             # Push all tags
+
+USEFUL COMMANDS FOR THIS PROJECT
+---------------------------------
+# Exclude data files from tracking
+git rm --cached clean_data_imus/*.csv
+git rm --cached raw_data_imus/**/*.csv
+
+# Check what would be committed
+git diff --cached --name-only
+
+# View file history
+git log --follow -- <file>
+
+# Find when a bug was introduced
+git bisect start
+git bisect bad                              # Current version is bad
+git bisect good <commit-hash>               # Known good version
+
+COLLABORATION
+-------------
+git fetch                                   # Download changes without merging
+git pull --rebase                           # Pull with rebase instead of merge
+git push --force-with-lease                 # Safe force push
+
+CLEANUP
+-------
+git clean -n                                # Preview untracked files to remove
+git clean -fd                               # Remove untracked files and directories
+git gc                                      # Cleanup and optimize repository
+
+QUICK REFERENCE
+---------------
+git commit -am "message"                    # Stage and commit tracked files
+git checkout -- .                           # Discard all local changes
+git log --graph --oneline --all             # Visual branch history
+git blame <file>                            # Show who changed each line

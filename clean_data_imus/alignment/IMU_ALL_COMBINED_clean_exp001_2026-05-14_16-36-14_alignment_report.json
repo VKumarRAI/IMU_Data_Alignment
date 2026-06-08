@@ -1,0 +1,129 @@
+{
+  "input": "c:\\Users\\vkumar\\Documents\\ADI IMU\\clean_data_imus\\IMU_ALL_COMBINED_clean_exp001_2026-05-14_16-36-14.csv",
+  "reference_sensor": "ADI",
+  "n_snaps": 3,
+  "detection_threshold_sigma": 3.0,
+  "smooth_ms": 20.0,
+  "snaps_local_s": {
+    "ADI": [
+      [
+        17.52166,
+        577.3494
+      ],
+      [
+        18.134361,
+        629.7407
+      ],
+      [
+        21.668654,
+        995.6078
+      ]
+    ],
+    "KERNEL": [
+      [
+        3.777,
+        397.4636
+      ],
+      [
+        15.201,
+        531.0574
+      ],
+      [
+        16.322,
+        546.7524
+      ]
+    ],
+    "MICRO": [
+      [
+        37.767,
+        1404.366
+      ],
+      [
+        38.888,
+        1462.3661
+      ],
+      [
+        42.915,
+        1651.6651
+      ]
+    ]
+  },
+  "all_impulse_counts": {
+    "ADI": 9,
+    "KERNEL": 22,
+    "MICRO": 35
+  },
+  "shifts_applied_s": {
+    "ADI": 0.0,
+    "KERNEL": 13.74466,
+    "MICRO": -20.24534
+  },
+  "match_quality": [
+    {
+      "snap_num": 1,
+      "role": "anchor",
+      "adi_time_s": 17.5217,
+      "sensor": "KERNEL",
+      "sensor_local_s": 3.777,
+      "shift_s": 13.74466,
+      "aligned_time_s": 17.5217,
+      "delta_ms": 0.0,
+      "abs_delta_ms": 0.0
+    },
+    {
+      "snap_num": 1,
+      "role": "anchor",
+      "adi_time_s": 17.5217,
+      "sensor": "MICRO",
+      "sensor_local_s": 37.767,
+      "shift_s": -20.24534,
+      "aligned_time_s": 17.5217,
+      "delta_ms": 0.0,
+      "abs_delta_ms": 0.0
+    },
+    {
+      "snap_num": 2,
+      "role": "verification",
+      "adi_time_s": 18.1344,
+      "sensor": "KERNEL",
+      "sensor_local_s": 15.201,
+      "shift_s": 13.74466,
+      "aligned_time_s": 28.9457,
+      "delta_ms": -10811.299,
+      "abs_delta_ms": 10811.299
+    },
+    {
+      "snap_num": 2,
+      "role": "verification",
+      "adi_time_s": 18.1344,
+      "sensor": "MICRO",
+      "sensor_local_s": 38.888,
+      "shift_s": -20.24534,
+      "aligned_time_s": 18.6427,
+      "delta_ms": -508.299,
+      "abs_delta_ms": 508.299
+    },
+    {
+      "snap_num": 3,
+      "role": "verification",
+      "adi_time_s": 21.6687,
+      "sensor": "KERNEL",
+      "sensor_local_s": 16.322,
+      "shift_s": 13.74466,
+      "aligned_time_s": 30.0667,
+      "delta_ms": -8398.006,
+      "abs_delta_ms": 8398.006
+    },
+    {
+      "snap_num": 3,
+      "role": "verification",
+      "adi_time_s": 21.6687,
+      "sensor": "MICRO",
+      "sensor_local_s": 42.915,
+      "shift_s": -20.24534,
+      "aligned_time_s": 22.6697,
+      "delta_ms": -1001.006,
+      "abs_delta_ms": 1001.006
+    }
+  ]
+}
